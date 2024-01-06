@@ -31,8 +31,8 @@ clean::
 	rm -rf ./packages/*
 
 before-package::
-        ls
 	rm -rf ./packages
+	ls
 	cp -a ./strapfiles ./.theos/_/Applications/Unagent.app/
 	ldid -Sentitlements.plist ./.theos/_/Applications/Unagent.app/Unagent
 	mkdir -p ./packages/Payload
