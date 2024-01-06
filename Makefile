@@ -14,7 +14,7 @@ TARGET_CODESIGN = echo "don't sign"
 
 include $(THEOS)/makefiles/common.mk
 
-XCODE_SCHEME = App
+XCODE_SCHEME = Unagent
 XCODEPROJ_NAME = Unagent
 
 Unagent_XCODEFLAGS = MARKETING_VERSION=$(THEOS_PACKAGE_BASE_VERSION) \
