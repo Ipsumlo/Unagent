@@ -22,7 +22,7 @@ Unagent_XCODEFLAGS = MARKETING_VERSION=$(THEOS_PACKAGE_BASE_VERSION) \
 	CODE_SIGN_IDENTITY="" \
 	AD_HOC_CODE_SIGNING_ALLOWED=YES
 Unagent_XCODE_SCHEME = $(XCODE_SCHEME)
-#Bootstrap_CODESIGN_FLAGS = -Sentitlements.plist
+#Unagent_CODESIGN_FLAGS = -Sentitlements.plist
 Unagent_INSTALL_PATH = /Applications
 
 include $(THEOS_MAKE_PATH)/xcodeproj.mk
@@ -32,12 +32,14 @@ clean::
 
 before-package::
 	rm -rf ./packages
+	cd App
 	ls
-	cp -a ./strapfiles ./.theos/_/Applications/Unagent.app/
-	ldid -Sentitlements.plist ./.theos/_/Applications/Unagent.app/Unagent
+	cd ..
+	#cp -a ./strapfiles ./.theos/_/Applications/Unagent.app/
+	ldid -SBingMeUp (iOS).entitlements ./.theos/_/Applications/Unagent.app/Unagent
 	mkdir -p ./packages/Payload
-	cp -R ./.theos/_/Applications/Bootstrap.app ./packages/Payload
-	cd ./packages && zip -mry ./Bootstrap.tipa ./Payload
+	cp -R ./.theos/_/Applications/Unagent.app ./packages/Payload
+	cd ./packages && zip -mry ./Unagent.tipa ./Payload
 	rm -rf ./.theos/_/Applications
 	mkdir ./.theos/_/tmp
 	cp ./packages/Unagent.tipa ./.theos/_/tmp/
