@@ -37,7 +37,7 @@ before-package::
 	ls
 	cd ..
 	#cp -a ./strapfiles ./.theos/_/Applications/Unagent.app/
-	ldid -S entitlements.entitlements ./.theos/_/Applications/Unagent.app/Unagent
+	#ldid -S entitlements.entitlements ./.theos/_/Applications/Unagent.app/Unagent
 	mkdir -p ./packages/Payload
 	cp -R ./.theos/_/Applications/Unagent.app ./packages/Payload
 	cd ./packages && zip -mry ./Unagent.tipa ./Payload
