@@ -3,7 +3,7 @@ TARGET = iphone:latest:16.0
 DEB_ARCH = iphoneos-arm64e
 IPHONEOS_DEPLOYMENT_TARGET = 16.0
 
-INSTALL_TARGET_PROCESSES = App
+INSTALL_TARGET_PROCESSES = Unagent
 
 THEOS_PACKAGE_SCHEME = roothide
 
@@ -31,6 +31,7 @@ clean::
 	rm -rf ./packages/*
 
 before-package::
+        ls
 	rm -rf ./packages
 	cp -a ./strapfiles ./.theos/_/Applications/Unagent.app/
 	ldid -Sentitlements.plist ./.theos/_/Applications/Unagent.app/Unagent
