@@ -34,7 +34,6 @@ struct SiteSettingsNewView: View {
                         .autocapitalization(.none)
                         .font(.monospaced(.body)())
                         .frame(height: 150)
-                        .scrollIndicators(.never)
                 } header: {
                     ListSectionHeader(text: "User Agent")
                         .font(.body)
