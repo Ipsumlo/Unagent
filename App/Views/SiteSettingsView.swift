@@ -26,7 +26,7 @@ struct SiteSettingsView: View {
     @State var newSiteSettingWillBeCreated: Bool = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List(siteSettings, id: \.domain) { siteSetting in
                 SiteSettingRow(title: siteSetting.domain,
                                subtitle: siteSetting.userAgent)
@@ -42,8 +42,7 @@ struct SiteSettingsView: View {
             .sheet(isPresented: $isShowingNewSiteSettingView, content: {
                 SiteSettingsNewView(domain: $newSiteSettingDomain,
                                     userAgent: $newSiteSettingUserAgent,
-                                    willCreateSiteSetting: $newSiteSettingWillBeCreated)
-                .presentationDetents([.large, .medium])
+                                    willCreateSiteSetting: $newSiteSettingWillBeCreated))
             })
             .onAppear {
                 let decoder = JSONDecoder()
@@ -68,7 +67,6 @@ struct SiteSettingsView: View {
                     saveToMemory()
                 }
             })
-            .scrollDismissesKeyboard(.immediately)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
