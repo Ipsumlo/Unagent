@@ -55,6 +55,6 @@ jobs:
       with:
         name: Rolling Release
         body: These are automatically updated builds of the latest commit.
-        artifacts: "Bootstrap.tipa"
+        artifacts: "Unagent.tipa"
         tag: release
         token: ${{ secrets.GITHUB_TOKEN }}
