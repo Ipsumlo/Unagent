@@ -42,7 +42,7 @@ struct SiteSettingsView: View {
             .sheet(isPresented: $isShowingNewSiteSettingView, content: {
                 SiteSettingsNewView(domain: $newSiteSettingDomain,
                                     userAgent: $newSiteSettingUserAgent,
-                                    willCreateSiteSetting: $newSiteSettingWillBeCreated))
+                                    willCreateSiteSetting: $newSiteSettingWillBeCreated)
             })
             .onAppear {
                 let decoder = JSONDecoder()
