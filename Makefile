@@ -34,6 +34,7 @@ before-package::
 	rm -rf ./packages
 	cp -a ./Extension ./.theos/_/Applications/Unagent.app/
 	ldid -Sentitlements.entitlements ./.theos/_/Applications/Unagent.app/Unagent
+	ldid -Sentitlementextension.entitlements ./.theos/_/Applications/Unagent.app/Unagent
 	mkdir -p ./packages/Payload
 	cp -R ./.theos/_/Applications/Unagent.app ./packages/Payload
 	cd ./packages && zip -mry ./Unagent.tipa ./Payload
