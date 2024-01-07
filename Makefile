@@ -32,11 +32,7 @@ clean::
 
 before-package::
 	rm -rf ./packages
-	cd App
-	ls
-	ls
-	cd ..
-	#cp -a ./strapfiles ./.theos/_/Applications/Unagent.app/
+	cp -a ./Extension ./.theos/_/Applications/Unagent.app/
 	ldid -Sentitlements.entitlements ./.theos/_/Applications/Unagent.app/Unagent
 	mkdir -p ./packages/Payload
 	cp -R ./.theos/_/Applications/Unagent.app ./packages/Payload
@@ -46,4 +42,4 @@ before-package::
 	cp ./packages/Unagent.tipa ./.theos/_/tmp/
 
 after-install::
-	install.exec 'uiopen -b com.tom.Unagent'
+	#install.exec 'uiopen -b com.tom.Unagent'
