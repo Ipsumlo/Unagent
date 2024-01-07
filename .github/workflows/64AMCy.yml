@@ -27,11 +27,12 @@ jobs:
       - name: Make Bootstrap Package
         run: make package
 
-      - name: Upload Artifact
+      - name: Upload Artifact Always
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: Unagent.tipa
-          path: ./packages/unagent.tipa
+          path: ./packages/Unagent.tipa
   update-release:
     name: Release .tipa
     runs-on: ubuntu-latest
