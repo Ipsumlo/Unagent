@@ -15,7 +15,7 @@ class MoreViewController: UIHostingController<MoreView> {
 
 struct MoreView: View {
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section {
                     Link(destination: URL(string: "https://x.com/katagaki_")!) {
