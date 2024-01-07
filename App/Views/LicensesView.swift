@@ -63,7 +63,6 @@ SOFTWARE.
             Section {
                 Text(license.text)
                     .font(.caption)
-                    .monospaced()
             } header: {
                 ListSectionHeader(text: license.libraryName)
                     .font(.body)
