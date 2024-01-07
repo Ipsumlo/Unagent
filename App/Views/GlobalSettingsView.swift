@@ -28,7 +28,6 @@ struct GlobalSettingsView: View {
                     TextEditor(text: $currentUserAgent)
                         .font(.monospaced(.body)())
                         .frame(height: 150)
-                        .scrollIndicators(.never)
                 } header: {
                     HStack(alignment: .center) {
                         ListSectionHeader(text: "Global User Agent")
@@ -86,7 +85,6 @@ struct GlobalSettingsView: View {
                     defaults.set(newValue, forKey: "UserAgent")
                 }
             }
-            .scrollDismissesKeyboard(.immediately)
         }
     }
 }
